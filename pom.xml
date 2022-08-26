@@ -100,6 +100,47 @@
                 <version>${time.version}</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>com.kylon</groupId>
+                <artifactId>time-common</artifactId>
+                <version>${time.version}</version>
+
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- 引入所有 匹配文件进行过滤 -->
+                <includes>
+                    <include>application*</include>
+                    <include>bootstrap*</include>
+                    <include>banner*</include>
+                </includes>
+                <!-- 启用过滤 即该资源中的变量将会被过滤器中的值替换 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!-- 环境标识，需要与配置文件的名称相对应 -->
+                <profiles.active>dev</profiles.active>
+                <logging.level>debug</logging.level>
+                <knife4j.production>false</knife4j.production>
+                <endpoints.include>'*'</endpoints.include>
+            </properties>
+            <activation>
+                <!-- 默认环境 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>

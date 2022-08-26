@@ -38,5 +38,10 @@
             <artifactId>time-service</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.kylon</groupId>
+            <artifactId>time-common</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

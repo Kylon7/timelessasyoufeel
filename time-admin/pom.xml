@@ -24,4 +24,21 @@
         </dependency>
 
     </dependencies>
+
+
+    <profiles>
+        <profile>
+            <!-- 不同环境profile的唯一id-->
+            <id>dev</id>
+            <properties>
+                <profiles.active>dev</profiles.active>
+            </properties>
+            <!--activation用来指定激活方式，可以根据jdk环境，环境变量，文件的存在或缺失-->
+            <activation>
+                <!--这个字段表示默认激活-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
 </project>

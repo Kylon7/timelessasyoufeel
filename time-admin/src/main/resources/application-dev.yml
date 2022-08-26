@@ -9,6 +9,8 @@ server:
 
 # Spring配置
 spring:
+  profiles:
+    active: dev
   application:
     name: ${timeless.name}
     datasource:

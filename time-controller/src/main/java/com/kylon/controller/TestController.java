@@ -1,8 +1,8 @@
 package com.kylon.controller;
 
+import com.kylon.resultful.Resp;
 import com.kylon.service.TestService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class TestController {
 
     @ApiOperation(value = "testone")
     @GetMapping("/testone")
-    public void testOne(){
-        testService.test();
+    public Resp testOne(){
+        return Resp.success(testService.test());
     }
 }
